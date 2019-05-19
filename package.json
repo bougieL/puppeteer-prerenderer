@@ -1,0 +1,58 @@
+{
+  "name": "puppeteer-prerenderer",
+  "description": "Prerender single page application to multiple static html files.",
+  "version": "0.0.0",
+  "author": "Bougie @bougieL",
+  "bin": {
+    "puppeteer-prerenderer": "./bin/run"
+  },
+  "bugs": "https://github.com/bougieL/puppeteer-prerenderer/issues",
+  "homepage": "https://github.com/bougieL/puppeteer-prerenderer",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "axios": "^0.18.0",
+    "fs-extra": "^8.0.1",
+    "puppeteer": "^1.16.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@types/axios": "^0.14.0",
+    "@types/fs-extra": "^7.0.0",
+    "@types/node": "^12",
+    "@types/puppeteer": "^1.12.4",
+    "globby": "^9",
+    "ts-node": "^8",
+    "typescript": "^3.4"
+  },
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "puppeteer-prerenderer",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "repository": "bougieL/puppeteer-prerenderer",
+  "types": "lib/index.d.ts"
+}

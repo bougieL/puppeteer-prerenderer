@@ -3,7 +3,6 @@ import { writeFile, saveFile } from './paths'
 import { isFileExists } from './paths'
 
 const domain = 'http://127.0.0.1:8080/bougie-design/'
-
 ;(async () => {
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
@@ -36,13 +35,13 @@ async function getUrlsFromPage(page: puppeteer.Page) {
   const url = page.url()
   const domain = url.replace(/(.*:\/\/.+?)\/.*/, '$1')
   const urls = await Promise.all(
-    (await page.$$('a')).map(async el => {
+    (await page.$$('a')).map(async (el) => {
       return await (await el.getProperty('href')).jsonValue()
     })
   )
   return urls
     .filter((url: string) => url.startsWith(domain))
-    .filter(url => !isFileExists(url))
+    .filter((url) => !isFileExists(url))
 }
 
 // async function getStaticUrlsFromPage(page: puppeteer.Page) {

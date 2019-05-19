@@ -16,6 +16,7 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "format": "prettier --write src/**/*.* --ignore-path .gitignore",
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
@@ -34,6 +35,7 @@
     "@types/node": "^12",
     "@types/puppeteer": "^1.12.4",
     "globby": "^9",
+    "prettier": "^1.17.1",
     "ts-node": "^8",
     "typescript": "^3.4"
   },

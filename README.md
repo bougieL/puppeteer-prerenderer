@@ -15,11 +15,11 @@ Prerender single page application to multiple static html files.
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g puppeteer-prerenderer
+$ npm install -g @bougiel/puppeteer-prerenderer
 $ puppeteer-prerenderer COMMAND
 running command...
 $ puppeteer-prerenderer (-v|--version|version)
-puppeteer-prerenderer/0.0.0 darwin-x64 node-v12.2.0
+@bougiel/puppeteer-prerenderer/0.0.1 darwin-x64 node-v12.2.0
 $ puppeteer-prerenderer --help [COMMAND]
 USAGE
   $ puppeteer-prerenderer COMMAND
@@ -40,6 +40,7 @@ USAGE
   $ puppeteer-prerenderer hello [FILE]
 
 OPTIONS
+  -F, --file=file
   -f, --force
   -h, --help       show CLI help
   -n, --name=name  name to print
@@ -49,7 +50,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/hello.ts)_
 
 ## `puppeteer-prerenderer help [COMMAND]`
 

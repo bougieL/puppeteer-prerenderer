@@ -28,33 +28,11 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`puppeteer-prerenderer crawl [DIST]`](#puppeteer-prerenderer-crawl-dist)
 * [`puppeteer-prerenderer help [COMMAND]`](#puppeteer-prerenderer-help-command)
+* [`puppeteer-prerenderer render [DOMAIN]`](#puppeteer-prerenderer-render-domain)
 * [`puppeteer-prerenderer serve [DIST]`](#puppeteer-prerenderer-serve-dist)
+* [`puppeteer-prerenderer serveRender [DIST]`](#puppeteer-prerenderer-serverender-dist)
 * [`puppeteer-prerenderer sitemap DOMAIN`](#puppeteer-prerenderer-sitemap-domain)
-
-## `puppeteer-prerenderer crawl [DIST]`
-
-serve a SPA bundle.
-
-```
-USAGE
-  $ puppeteer-prerenderer crawl [DIST]
-
-ARGUMENTS
-  DIST  [default: .] SPA bundle dir.
-
-OPTIONS
-  -b, --base=base  [default: /] SPA base router.
-  -h, --help       show CLI help
-  -l, --log        wheather show access logs.
-  -p, --port=port  [default: 3000] listen port
-
-EXAMPLE
-  $ puppeteer-prerenderer serve .
-```
-
-_See code: [src/commands/crawl.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/crawl.ts)_
 
 ## `puppeteer-prerenderer help [COMMAND]`
 
@@ -72,6 +50,28 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+
+## `puppeteer-prerenderer render [DOMAIN]`
+
+render a site or page to static html file(s).
+
+```
+USAGE
+  $ puppeteer-prerenderer render [DOMAIN]
+
+ARGUMENTS
+  DOMAIN  render a domain's pages.
+
+OPTIONS
+  -h, --help           show CLI help
+  -o, --output=output  [default: /Users/bougie/Projects/puppeteer-prerenderer] output directory.
+  -s, --single         render single page only.
+
+EXAMPLE
+  $ puppeteer-prerenderer render https://www.bougieblog.cn
+```
+
+_See code: [src/commands/render.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/render.ts)_
 
 ## `puppeteer-prerenderer serve [DIST]`
 
@@ -95,6 +95,29 @@ EXAMPLE
 ```
 
 _See code: [src/commands/serve.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/serve.ts)_
+
+## `puppeteer-prerenderer serveRender [DIST]`
+
+serve a SPA bundle, then render to static html files.
+
+```
+USAGE
+  $ puppeteer-prerenderer serveRender [DIST]
+
+ARGUMENTS
+  DIST  [default: .] SPA bundle dir.
+
+OPTIONS
+  -b, --base=base      [default: /] SPA base router.
+  -h, --help           show CLI help
+  -o, --output=output  renderd out put dir
+  -p, --port=port      [default: 3000] listen port
+
+EXAMPLE
+  $ puppeteer-prerenderer serveRender .
+```
+
+_See code: [src/commands/serveRender.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/serveRender.ts)_
 
 ## `puppeteer-prerenderer sitemap DOMAIN`
 

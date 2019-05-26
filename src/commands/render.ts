@@ -20,7 +20,7 @@ export default class Render extends Command {
     help: flags.help({ char: 'h' }),
     single: flags.boolean({
       char: 's',
-      description: 'rendered page url.',
+      description: 'render single page only.',
       default: false
     }),
     output: flags.string({
@@ -40,9 +40,13 @@ export default class Render extends Command {
     if (single) {
       renderUrlsToString({
         urls: [domain],
-        onItemRendered(content, url) {
+        onItemRendered: (content, url) => {
           const path = join(output, getRelativePathFromUrl(url))
           writeFile(path, content)
+        },
+        onFinished: () => {
+          // this.exit()
+          process.exit(0)
         }
       })
       return
@@ -50,9 +54,13 @@ export default class Render extends Command {
     getUrlsFromSite(domain, (urls) => {
       renderUrlsToString({
         urls,
-        onItemRendered(content, url) {
+        onItemRendered: (content, url) => {
           const path = join(output, getRelativePathFromUrl(url))
           writeFile(path, content)
+        },
+        onFinished: () => {
+          // this.exit(0)
+          process.exit(0)
         }
       })
     })

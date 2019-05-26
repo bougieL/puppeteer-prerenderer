@@ -28,29 +28,33 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`puppeteer-prerenderer hello [FILE]`](#puppeteer-prerenderer-hello-file)
+* [`puppeteer-prerenderer crawl [DIST]`](#puppeteer-prerenderer-crawl-dist)
 * [`puppeteer-prerenderer help [COMMAND]`](#puppeteer-prerenderer-help-command)
+* [`puppeteer-prerenderer serve [DIST]`](#puppeteer-prerenderer-serve-dist)
+* [`puppeteer-prerenderer sitemap DOMAIN`](#puppeteer-prerenderer-sitemap-domain)
 
-## `puppeteer-prerenderer hello [FILE]`
+## `puppeteer-prerenderer crawl [DIST]`
 
-describe the command here
+serve a SPA bundle.
 
 ```
 USAGE
-  $ puppeteer-prerenderer hello [FILE]
+  $ puppeteer-prerenderer crawl [DIST]
+
+ARGUMENTS
+  DIST  [default: .] SPA bundle dir.
 
 OPTIONS
-  -F, --file=file
-  -f, --force
+  -b, --base=base  [default: /] SPA base router.
   -h, --help       show CLI help
-  -n, --name=name  name to print
+  -l, --log        wheather show access logs.
+  -p, --port=port  [default: 3000] listen port
 
 EXAMPLE
-  $ puppeteer-prerenderer hello
-  hello world from ./src/hello.ts!
+  $ puppeteer-prerenderer serve .
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/hello.ts)_
+_See code: [src/commands/crawl.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/crawl.ts)_
 
 ## `puppeteer-prerenderer help [COMMAND]`
 
@@ -68,4 +72,49 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+
+## `puppeteer-prerenderer serve [DIST]`
+
+serve a SPA bundle.
+
+```
+USAGE
+  $ puppeteer-prerenderer serve [DIST]
+
+ARGUMENTS
+  DIST  [default: .] SPA bundle dir.
+
+OPTIONS
+  -b, --base=base  [default: /] SPA base router.
+  -h, --help       show CLI help
+  -l, --log        wheather show access logs.
+  -p, --port=port  [default: 3000] listen port
+
+EXAMPLE
+  $ puppeteer-prerenderer serve .
+```
+
+_See code: [src/commands/serve.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/serve.ts)_
+
+## `puppeteer-prerenderer sitemap DOMAIN`
+
+serve a SPA bundle.
+
+```
+USAGE
+  $ puppeteer-prerenderer sitemap DOMAIN
+
+ARGUMENTS
+  DOMAIN  site domain.
+
+OPTIONS
+  -f, --filename=filename  [default: sitemap]
+  -h, --help               show CLI help
+  -o, --output=output      [default: .]
+
+EXAMPLE
+  $ puppeteer-prerenderer sitemap https://www.bougieblog.cn
+```
+
+_See code: [src/commands/sitemap.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.1/src/commands/sitemap.ts)_
 <!-- commandsstop -->

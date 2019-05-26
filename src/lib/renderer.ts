@@ -27,12 +27,12 @@ class Renderer {
 
 export async function renderUrlsToString({
   urls = [],
-  callback = () => {},
+  onItemRendered = () => {},
   onFinished = () => {}
 }: {
   urls: string[]
-  onFinished: () => void
-  callback: (content: string, url: string) => void
+  onFinished?: () => void
+  onItemRendered?: (content: string, url: string) => void
 }) {
   const browser = await puppeteer.launch()
   const renderer = new Renderer(browser)
@@ -43,7 +43,7 @@ export async function renderUrlsToString({
     try {
       const content = await renderer.renderToString(url)
       Log.success(`render ${url} success.`)
-      callback(content, url)
+      onItemRendered(content, url)
     } catch (error) {
       Log.error(`render ${url} error.`)
     }

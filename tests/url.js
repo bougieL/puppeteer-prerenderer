@@ -2,6 +2,7 @@ const {
   getUrlsFromSite
 } = require('../lib')
 
-getUrlsFromSite('http://localhost:8080/bougie-design', urls => {
+getUrlsFromSite('https://www.bougieblog.cn', urls => {
   console.log(urls)
+  // process.stdout = urls
 })

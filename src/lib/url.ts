@@ -38,6 +38,7 @@ export async function getUrlsFromSite(
       return async (prev = []) => {
         await page.goto(url, { waitUntil: 'domcontentloaded' })
         const urls = await getUrlsFromPage(page)
+        Log.success(`crawl ${url} success.`)
         return [...prev, ...urls]
       }
     })

@@ -16,31 +16,56 @@ Prerender single page application to multiple static html files.
 <!-- usage -->
 ```sh-session
 $ npm install -g @bougiel/puppeteer-prerenderer
-$ puppeteer-prerenderer COMMAND
+$ ppr COMMAND
 running command...
-$ puppeteer-prerenderer (-v|--version|version)
+$ ppr (-v|--version|version)
 @bougiel/puppeteer-prerenderer/0.0.2 darwin-x64 node-v12.2.0
-$ puppeteer-prerenderer --help [COMMAND]
+$ ppr --help [COMMAND]
 USAGE
-  $ puppeteer-prerenderer COMMAND
+  $ ppr COMMAND
 ...
 ```
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`puppeteer-prerenderer help [COMMAND]`](#puppeteer-prerenderer-help-command)
-* [`puppeteer-prerenderer render [DOMAIN]`](#puppeteer-prerenderer-render-domain)
-* [`puppeteer-prerenderer serve [DIST]`](#puppeteer-prerenderer-serve-dist)
-* [`puppeteer-prerenderer serveRender [DIST]`](#puppeteer-prerenderer-serverender-dist)
-* [`puppeteer-prerenderer sitemap DOMAIN`](#puppeteer-prerenderer-sitemap-domain)
+* [`ppr autocomplete [SHELL]`](#ppr-autocomplete-shell)
+* [`ppr help [COMMAND]`](#ppr-help-command)
+* [`ppr render [DOMAIN]`](#ppr-render-domain)
+* [`ppr serve [DIST]`](#ppr-serve-dist)
+* [`ppr serveRender [DIST]`](#ppr-serverender-dist)
+* [`ppr sitemap DOMAIN`](#ppr-sitemap-domain)
+* [`ppr update [CHANNEL]`](#ppr-update-channel)
 
-## `puppeteer-prerenderer help [COMMAND]`
+## `ppr autocomplete [SHELL]`
 
-display help for puppeteer-prerenderer
+display autocomplete installation instructions
 
 ```
 USAGE
-  $ puppeteer-prerenderer help [COMMAND]
+  $ ppr autocomplete [SHELL]
+
+ARGUMENTS
+  SHELL  shell type
+
+OPTIONS
+  -r, --refresh-cache  Refresh cache (ignores displaying instructions)
+
+EXAMPLES
+  $ ppr autocomplete
+  $ ppr autocomplete bash
+  $ ppr autocomplete zsh
+  $ ppr autocomplete --refresh-cache
+```
+
+_See code: [@oclif/plugin-autocomplete](https://github.com/oclif/plugin-autocomplete/blob/v0.1.0/src/commands/autocomplete/index.ts)_
+
+## `ppr help [COMMAND]`
+
+display help for ppr
+
+```
+USAGE
+  $ ppr help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -51,13 +76,13 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
 
-## `puppeteer-prerenderer render [DOMAIN]`
+## `ppr render [DOMAIN]`
 
 render a site or page to static html file(s).
 
 ```
 USAGE
-  $ puppeteer-prerenderer render [DOMAIN]
+  $ ppr render [DOMAIN]
 
 ARGUMENTS
   DOMAIN  render a domain's pages.
@@ -73,13 +98,13 @@ EXAMPLE
 
 _See code: [src/commands/render.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/render.ts)_
 
-## `puppeteer-prerenderer serve [DIST]`
+## `ppr serve [DIST]`
 
 serve a SPA bundle.
 
 ```
 USAGE
-  $ puppeteer-prerenderer serve [DIST]
+  $ ppr serve [DIST]
 
 ARGUMENTS
   DIST  [default: .] SPA bundle dir.
@@ -96,13 +121,13 @@ EXAMPLE
 
 _See code: [src/commands/serve.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/serve.ts)_
 
-## `puppeteer-prerenderer serveRender [DIST]`
+## `ppr serveRender [DIST]`
 
 serve a SPA bundle, then render to static html files.
 
 ```
 USAGE
-  $ puppeteer-prerenderer serveRender [DIST]
+  $ ppr serveRender [DIST]
 
 ARGUMENTS
   DIST  [default: .] SPA bundle dir.
@@ -119,13 +144,13 @@ EXAMPLE
 
 _See code: [src/commands/serveRender.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/serveRender.ts)_
 
-## `puppeteer-prerenderer sitemap DOMAIN`
+## `ppr sitemap DOMAIN`
 
 serve a SPA bundle.
 
 ```
 USAGE
-  $ puppeteer-prerenderer sitemap DOMAIN
+  $ ppr sitemap DOMAIN
 
 ARGUMENTS
   DOMAIN  site domain.
@@ -140,4 +165,15 @@ EXAMPLE
 ```
 
 _See code: [src/commands/sitemap.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/sitemap.ts)_
+
+## `ppr update [CHANNEL]`
+
+update the ppr CLI
+
+```
+USAGE
+  $ ppr update [CHANNEL]
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.9/src/commands/update.ts)_
 <!-- commandsstop -->

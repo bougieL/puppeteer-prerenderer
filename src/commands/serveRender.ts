@@ -43,7 +43,7 @@ export default class ServeRender extends Command {
       args: { dist },
       flags: { port, base, output }
     } = this.parse(ServeRender)
-    const domain = `http://127.0.0.1:${port}/${base}`
+    const domain = `http://localhost:${port}${base}`
     createSPAServer({
       dist: cwd(dist),
       port: Number.parseInt(port),
@@ -53,7 +53,9 @@ export default class ServeRender extends Command {
           renderUrlsToString({
             urls,
             onItemRendered: (content, url) => {
-              const baseDir = output ? cwd(output) : cwd(dist)
+              const baseDir = output
+                ? cwd(output)
+                : cwd(dist).replace(/\/[^\/]+?\/?$/, '')
               const path = join(baseDir, getRelativePathFromUrl(url))
               writeFile(path, content)
             },

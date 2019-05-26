@@ -1,10 +1,11 @@
 {
   "name": "@bougiel/puppeteer-prerenderer",
   "description": "Prerender single page application to multiple static html files.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Bougie @bougieL",
   "bin": {
-    "puppeteer-prerenderer": "./bin/run"
+    "puppeteer-prerenderer": "bin/run",
+    "ppr": "bin/run"
   },
   "bugs": "https://github.com/bougieL/puppeteer-prerenderer/issues",
   "homepage": "https://github.com/bougieL/puppeteer-prerenderer",

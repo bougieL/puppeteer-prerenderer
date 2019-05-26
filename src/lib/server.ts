@@ -29,9 +29,9 @@ export function createSPAServer({
   })
   app.use(base, router)
   const server = app.listen(port, () => {
-    Log.success(`server started at 
-          http://localhost:${port}${base}
-          http://${getHostIP()}:${port}${base}`)
+    Log.info(`server started at:`)
+    Log.info(`http://localhost:${port}${base}`)
+    Log.info(`http://${getHostIP()}:${port}${base}`)
     onCreated()
   })
   return {

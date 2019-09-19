@@ -6,28 +6,37 @@ export function createSPAServer({
   port = 3000,
   base = '/',
   dist,
+  single = true,
   log = false,
   onCreated = () => {}
 }: {
   port?: number
   base?: string
   dist: string
+  single?: boolean
   log?: boolean
   onCreated?: () => void
 }) {
   const app = express()
-  const router = express.Router()
-  // const root = join(dist, base)
-  if (log) {
-    app.use('*', logger)
-  }
-  app.use(base, express.static(dist))
-  router.get('*', (req, res) => {
-    res.sendFile('index.html', {
-      root: dist
+
+  app.use(
+    base,
+    express.static(dist, {
+      extensions: ['html']
     })
-  })
-  app.use(base, router)
+  )
+  // const router = express.Router()
+  // router.get('/hiui*', )
+  if (single) {
+    app.get(`${base}/*`, (req, res) => {
+      res.sendFile('index.html', {
+        root: dist
+      })
+    })
+  }
+  if (log) {
+    app.use(logger)
+  }
   const server = app.listen(port, () => {
     Log.info(`server started at:`)
     Log.info(`http://localhost:${port}${base}`)

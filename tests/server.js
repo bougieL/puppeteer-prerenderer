@@ -5,6 +5,8 @@ const path = require('path')
 
 createSPAServer({
   port: 4200,
-  dist: path.resolve(__dirname),
+  dist: path.resolve(__dirname, '../../hiui/dist'),
+  single: false,
+  base: '/hiui',
   log: true
 })

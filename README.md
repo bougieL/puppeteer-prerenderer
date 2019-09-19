@@ -19,7 +19,7 @@ $ npm install -g @bougiel/puppeteer-prerenderer
 $ ppr COMMAND
 running command...
 $ ppr (-v|--version|version)
-@bougiel/puppeteer-prerenderer/0.0.2 darwin-x64 node-v12.2.0
+@bougiel/puppeteer-prerenderer/0.0.4 darwin-x64 node-v10.16.0
 $ ppr --help [COMMAND]
 USAGE
   $ ppr COMMAND
@@ -96,7 +96,7 @@ EXAMPLE
   $ puppeteer-prerenderer render https://www.bougieblog.cn
 ```
 
-_See code: [src/commands/render.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/render.ts)_
+_See code: [src/commands/render.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.4/src/commands/render.ts)_
 
 ## `ppr serve [DIST]`
 
@@ -119,7 +119,7 @@ EXAMPLE
   $ puppeteer-prerenderer serve .
 ```
 
-_See code: [src/commands/serve.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/serve.ts)_
+_See code: [src/commands/serve.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.4/src/commands/serve.ts)_
 
 ## `ppr serveRender [DIST]`
 
@@ -142,7 +142,7 @@ EXAMPLE
   $ puppeteer-prerenderer serveRender .
 ```
 
-_See code: [src/commands/serveRender.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/serveRender.ts)_
+_See code: [src/commands/serveRender.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.4/src/commands/serveRender.ts)_
 
 ## `ppr sitemap DOMAIN`
 
@@ -164,7 +164,7 @@ EXAMPLE
   $ puppeteer-prerenderer sitemap https://www.bougieblog.cn
 ```
 
-_See code: [src/commands/sitemap.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.2/src/commands/sitemap.ts)_
+_See code: [src/commands/sitemap.ts](https://github.com/bougieL/puppeteer-prerenderer/blob/v0.0.4/src/commands/sitemap.ts)_
 
 ## `ppr update [CHANNEL]`
 

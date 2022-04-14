@@ -384,9 +384,9 @@ async-limiter@~1.0.0:
   integrity sha1-ePrtjD0HSrgfIrTphdeehzj3IPg=
 
 async@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npm.taobao.org/async/download/async-3.0.0.tgz#4c959b37d8c477dc189f2efb9340847f7ad7f785"
-  integrity sha1-TJWbN9jEd9wYny77k0CEf3rX94U=
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.2.tgz#2eb7671034bb2194d45d30e31e24ec7e7f9670cd"
+  integrity sha512-H0E+qZaDEfx/FY4t7iLRv1W2fFI6+pyCeTw1uN20AQPiwqwM6ojPxHxdLv4z8hi2DtnW9BOckSspLucW7pIE5g==
 
 atob@^2.1.1:
   version "2.1.2"
